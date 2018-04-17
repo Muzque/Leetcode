@@ -1,0 +1,5 @@
+Select
+    FirstName, LastName, Address.City, Address.State
+From
+    Person
+LEFT OUTER JOIN Address ON Person.PersonId = Address.PersonId
