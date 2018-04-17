@@ -1,9 +1,10 @@
 # Leetcode
 My leetcode repository
- 
+#
+
 ### Python3 ###
 | #        | Title                            | Time   | Space  | Runtime | Difficulty |
-| -------- | :------------------------------- | :----: | :----: | :-----: | :--------: |
+| -------- | :------------------------------- | :----: | :----: | :-----: | :--------: |
 | 1        | Two Sum                          | O(n)   | O(n)   | 948ms   | Easy       |
 | 7        | Reverse Integer                  | O(n)   | O(n)   | 68ms    | Easy       |
 
