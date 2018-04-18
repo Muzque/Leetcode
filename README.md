@@ -7,7 +7,8 @@ My leetcode repository
 | -------- | :------------------------------- | :----: | :----: | :-----: | :--------: |
 | 1        | Two Sum                          | O(n)   | O(n)   | 948ms   | Easy       |
 | 7        | Reverse Integer                  | O(n)   | O(n)   | 68ms    | Easy       |
-| 9        | Palindrome Number                |        |        | 292ms   | Easy
+| 9        | Palindrome Number                |        |        | 292ms   | Easy       |
+| 13       | Roman to Integer                 |        |        | 144ms   | Easy       |
 
 ### Python ###
 | #        | Title                            | Time   | Space  | Runtime | Difficulty |
