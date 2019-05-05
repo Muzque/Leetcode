@@ -1,29 +1,24 @@
 # Leetcode
-My leetcode repository
-#
-
-### Python3 ###
-| #        | Title                            | Time   | Space  | Runtime | Difficulty |
-| -------- | :------------------------------- | :----: | :----: | :-----: | :--------: |
-| 1        | Two Sum                          | O(n)   | O(n)   | 948ms   | Easy       |
-| 7        | Reverse Integer                  | O(n)   | O(n)   | 68ms    | Easy       |
-| 9        | Palindrome Number                |        |        | 292ms   | Easy       |
-| 13       | Roman to Integer                 |        |        | 144ms   | Easy       |
-
-### Python ###
-| #        | Title                            | Time   | Space  | Runtime | Difficulty |
-| -------- | :------------------------------- | :----: | :----: | :-----: | :--------: |
-| 461      | Hamming Distance                 | O(n)   | O(n)   | 72ms    | Easy       |
-| 557      | Reverse Words in a String III    | O(n)   | O(n)   | 52ms    | Easy       |
 
 ### MYSQL ###
-| #        | Title                                      | Runtime | Difficulty |
-| -------- | :----------------------------------------- | :-----: | :--------: |
-| 175      | Combine Two Tables                         | 208ms   | Easy       |
-| 176      | Second Highest Salary                      | 132ms   | Easy       |
-| 181      | Employees Earning More Than Their Managers | 293ms   | Easy       |
-| 182      | Duplicate Emails                           | 192ms   | Easy       |
-| 183      | Customers Who Never Order                  | 248ms   | Easy       |
-| 196      | Delete Duplicate Emails                    | 518ms   | Easy       |
-| 197      | Rising Temperature                         | 314ms   | Easy       |
-| 262      | Trips and Users                            | 185ms   | Hard       |
+|#    |Title                                     |Runtime|Difficulty|
+|:---:|:----------------------------------------:|:-----:|:--------:|
+|175  |Combine Two Tables                        |208    |Easy      |
+|176  |Second Highest Salary                     |132    |Easy      |
+|181  |Employees Earning More Than Their Managers|293    |Easy      |
+|182  |Duplicate Emails                          |192    |Easy      |
+|183  |Customers Who Never Order                 |248    |Easy      |
+|196  |Delete Duplicate Emails                   |518    |Easy      |
+|197  |Rising Temperature                        |314    |Easy      |
+|262  |Trips and Users                           |185    |Hard      |
+
+### Python3 ###
+|#    |Title                           |Runtime|Memory|Difficulty|
+|:---:|:------------------------------:|:-----:|:---: |:--------:|
+|1    |Two Sum                         |948    |null  |Easy      |
+|7    |Reverse Integer                 |68     |null  |Easy      |
+|9    |Palindrome Number               |292    |null  |Easy      |
+|13   |Roman to Integer                |144    |null  |Easy      |
+|461  |Hamming Distance                |72     |null  |Easy      |
+|557  |Reverse Words in a String III   |52     |null  |Easy      |
+|14   |Longest Common Prefix           |44     |13.1  |Easy      |
