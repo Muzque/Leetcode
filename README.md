@@ -23,3 +23,4 @@
 |557  |Reverse Words in a String III   |52     |null  |Easy      |
 |14   |Longest Common Prefix           |44     |13.1  |Easy      |
 |20   |Valid Parentheses               |48     |13.3  |Easy      |
+|21   |Merge Two Sorted Lists          |44     |13.2  |Easy      |
