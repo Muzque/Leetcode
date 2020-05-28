@@ -13,16 +13,16 @@
 |262  |Trips and Users                           |185    |Hard      |
 
 ### Python ###
-|#    |Title                           |Runtime|Memory|Difficulty|
-|:---:|:------------------------------:|:-----:|:---: |:--------:|
-|1    |Two Sum                         |948    |null  |Easy      |
-|7    |Reverse Integer                 |68     |null  |Easy      |
-|9    |Palindrome Number               |292    |null  |Easy      |
-|13   |Roman to Integer                |144    |null  |Easy      |
-|461  |Hamming Distance                |72     |null  |Easy      |
-|557  |Reverse Words in a String III   |52     |null  |Easy      |
-|14   |Longest Common Prefix           |44     |13.1  |Easy      |
-|20   |Valid Parentheses               |48     |13.3  |Easy      |
-|21   |Merge Two Sorted Lists          |44     |13.2  |Easy      |
-|100  |Same Tree                       |24     |13.9  |Easy
-|901  |Online Stock Span               |7064   |18.7  |Medium
+|#    |Title                           |Runtime|100% |Memory|100% |Difficulty|
+|:---:|:------------------------------:|:-----:|:---:|:---: |:---:|:--------:|
+|1    |Two Sum                         |948    |null |null  |null |Easy      |
+|7    |Reverse Integer                 |68     |null |null  |null |Easy      |
+|9    |Palindrome Number               |292    |null |null  |null |Easy      |
+|13   |Roman to Integer                |144    |null |null  |null |Easy      |
+|461  |Hamming Distance                |72     |null |null  |null |Easy      |
+|557  |Reverse Words in a String III   |52     |null |null  |null |Easy      |
+|14   |Longest Common Prefix           |44     |null |13.1  |null |Easy      |
+|20   |Valid Parentheses               |48     |null |13.3  |null |Easy      |
+|21   |Merge Two Sorted Lists          |44     |null |13.2  |null |Easy      |
+|100  |Same Tree                       |24     |89.95|13.9  | 5.72|Easy      |
+|901  |Online Stock Span               |7064   | 5.14|18.7  |100.0|Medium    |
