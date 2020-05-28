@@ -24,3 +24,4 @@
 |14   |Longest Common Prefix           |44     |13.1  |Easy      |
 |20   |Valid Parentheses               |48     |13.3  |Easy      |
 |21   |Merge Two Sorted Lists          |44     |13.2  |Easy      |
+|100  |Same Tree                       |24     |13.9  |Easy
