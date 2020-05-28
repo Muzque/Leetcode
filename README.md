@@ -12,7 +12,7 @@
 |197  |Rising Temperature                        |314    |Easy      |
 |262  |Trips and Users                           |185    |Hard      |
 
-### Python3 ###
+### Python ###
 |#    |Title                           |Runtime|Memory|Difficulty|
 |:---:|:------------------------------:|:-----:|:---: |:--------:|
 |1    |Two Sum                         |948    |null  |Easy      |
