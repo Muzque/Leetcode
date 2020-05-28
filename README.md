@@ -25,3 +25,4 @@
 |20   |Valid Parentheses               |48     |13.3  |Easy      |
 |21   |Merge Two Sorted Lists          |44     |13.2  |Easy      |
 |100  |Same Tree                       |24     |13.9  |Easy
+|901  |Online Stock Span               |7064   |18.7  |Medium
