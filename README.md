@@ -24,5 +24,5 @@
 |14   |Longest Common Prefix           |44     |null |13.1  |null |Easy      |
 |20   |Valid Parentheses               |48     |null |13.3  |null |Easy      |
 |21   |Merge Two Sorted Lists          |44     |null |13.2  |null |Easy      |
-|100  |Same Tree                       |24     |89.95|13.9  | 5.72|Easy      |
+|100  |Same Tree                       |20     |97.75|14.0  | 5.72|Easy      |
 |901  |Online Stock Span               |7064   | 5.14|18.7  |100.0|Medium    |

@@ -7,25 +7,33 @@
 
 
 class Solution:
-
-    def collect(self, leaf, name):
+    # 1st: 20ms, 14MB
+    def collect(self, leaf, arr):
         if leaf is None:
-            return
-        arr = getattr(self, name)
+            return arr
         arr.append(leaf.val)
         if leaf.left is not None and leaf.right is not None:
-            self.collect(leaf.left, name)
-            self.collect(leaf.right, name)
+            self.collect(leaf.left, arr)
+            self.collect(leaf.right, arr)
         elif leaf.left is not None:
-            self.collect(leaf.left, name)
+            self.collect(leaf.left, arr)
             arr.append(None)
         elif leaf.right is not None:
             arr.append(None)
-            self.collect(leaf.right, name)
+            self.collect(leaf.right, arr)
+        return arr
 
     def isSameTree(self, p, q) -> bool:
-        self.arr1 = []
-        self.arr2 = []
-        self.collect(p, 'arr1')
-        self.collect(q, 'arr2')
-        return self.arr1 == self.arr2
+        return self.collect(p, []) == self.collect(q, [])
+
+
+class Solution2:
+    # 2nd: 32ms, 14MB
+    def isSameTree(self, p, q) -> bool:
+        if p and q:
+            return p.val == q.val and \
+                   self.isSameTree(p.left, q.left) and \
+                   self.isSameTree(p.right, q.right)
+        elif p or q:
+            return False
+        return True
