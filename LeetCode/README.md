@@ -5,4 +5,4 @@
 |:--------:|:------------------------------:|:-----:|:-----:|
 |2021-04-26|Furthest Building You Can Reach |5284 ms|28.8 MB|
 |2021-04-27|Power of Three                  |64   ms|13.9 MB|
-|2021-04-28|Unique Paths II                 |||
+|2021-04-28|Unique Paths II                 |40   ms|14.3 MB|
