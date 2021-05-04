@@ -9,5 +9,5 @@
 |2021-04-29|Find First and Last Position of Element in Sorted Array|88   ms|15.5 MB|
 |2021-04-30|Powerful Integers                                      |20   ms|14.3 MB|
 |2021-05-01|Prefix and Suffix Search                               |652  ms|37.4 MB|
-|2021-05-02|Course Schedule III                                    |||
+|2021-05-02|Course Schedule III                                    |1684 ms|19.3 MB|
 |2021-05-03|Running Sum of 1d Array                                |40   ms|14.3 MB|
