@@ -12,3 +12,4 @@
 |2021-05-02|Course Schedule III                                    |1684 ms|19.3 MB|
 |2021-05-03|Running Sum of 1d Array                                |40   ms|14.3 MB|
 |2021-05-04|Non-decreasing Array                                   |176  ms|15.3 MB|
+|2021-05-05|Jump Game II                                           |28   ms|14.3 MB|
