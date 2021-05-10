@@ -48,14 +48,60 @@ Memory Usage: 389.3 MB
 """
 
 
-class Solution:
+# Avg: 284.52
+class Solution3:
     def countPrimes(self, n: int) -> int:
         ret = 0
         cache = dict((i, True) for i in range(2, n))
         for num, check in cache.items():
-            times = math.ceil(n/num)
             if check is True:
                 ret += 1
+                times = math.ceil(n / num)
                 for i in range(2, times):
                     cache[num*i] = False
         return ret
+
+
+"""
+21 / 21 test cases passed.
+Status: Accepted
+Runtime: 5196 ms
+Memory Usage: 389.2 MB
+"""
+
+
+# Avg: 262.93
+class Solution4:
+    def countPrimes(self, n: int) -> int:
+        if n < 3: return 0
+        ret = 1
+        cache = dict((i, True) for i in range(2, n))
+        for num in range(3, n, 2):
+            if cache[num] is True:
+                ret += 1
+                times = math.ceil(n / num)
+                for i in range(2, times):
+                    cache[num*i] = False
+        return ret
+
+
+"""
+
+21 / 21 test cases passed.
+Status: Accepted
+Runtime: 672 ms
+Memory Usage: 91.9 MB
+"""
+
+
+# Avg: 20.78
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        if n < 3:
+            return 0
+        cache = [True] * n
+        cache[0] = cache[1] = False
+        for i in range(2, int(n ** 0.5) + 1):
+            if cache[i]:
+                cache[i*i:n:i] = [False] * len(cache[i*i:n:i])
+        return sum(cache)
