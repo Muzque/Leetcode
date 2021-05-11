@@ -2,11 +2,15 @@ import time
 import importlib
 import argparse
 
+KEY_CATEGORY = 'python3'
+KEY_SOLUTION = 'Solution'
+KEY_TESTCASE = 'testcases'
+
 
 def select_problem(category: str, filename: str):
     mod = importlib.import_module(f'{category}.{filename}')
-    solution = getattr(mod, 'Solution')()
-    testcases = getattr(mod, 'testcases')
+    solution = getattr(mod, KEY_SOLUTION)()
+    testcases = getattr(mod, KEY_TESTCASE)
     return solution, testcases
 
 
@@ -16,12 +20,13 @@ def find_method(solution) -> str:
             return m
 
 
-def examine(sol, method: str, testcases: dict) -> None:
+def examine(sol, method: str, testcases: dict, options: dict) -> None:
     cost = 0
     for idx, testcase in testcases.items():
         print(f'Question {idx}')
         inputs, ans = testcase
-        print(f'Inputs: {inputs}')
+        if not options['hide_inputs']:
+            print(f'Inputs: {inputs}')
         t0 = time.time()
         ret = getattr(sol, method)(*inputs)
         dt = (time.time() - t0) * 1000
@@ -47,14 +52,16 @@ def examine(sol, method: str, testcases: dict) -> None:
 
 
 def main(args):
-    category = 'python3'
     filename = args.solution
-    solution, testcases = select_problem(category, filename)
+    solution, testcases = select_problem(KEY_CATEGORY, filename)
     method = find_method(solution)
     examine(
         sol=solution,
         method=method,
         testcases=testcases,
+        options={
+            'hide_inputs': args.hide_inputs,
+        },
     )
 
 
@@ -66,5 +73,11 @@ if __name__ == '__main__':
         type=str,
         help="select solutions",
         required=True,
+    )
+    parser.add_argument(
+        "-hi",
+        "--hide_inputs",
+        help="hide inputs",
+        action="store_true",
     )
     main(parser.parse_args())
