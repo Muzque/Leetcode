@@ -17,3 +17,4 @@
 |2021-05-07|Delete Operation for Two Strings                       |272  ms|16.2  MB|       |        |
 |2021-05-09|Construct Target Array With Multiple Sums              |256  ms|20    MB|       |        |
 |2021-05-10|Count Primes                                           |6396 ms|389.3 MB|672  ms|91.9  MB|
+|2021-05-11|Maximum Points You Can Obtain from Cards               |400  ms|27.5  MB|       |        |
