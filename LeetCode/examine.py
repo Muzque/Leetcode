@@ -93,7 +93,6 @@ class Examine:
 
     def go(self) -> Optional[float]:
         cost = 0
-        self.get_testcase()
         testcases, n_cases = self.get_testcase()
         for idx, testcase in testcases.items():
             idx, inputs, ans = self.init_test(idx, testcase)
