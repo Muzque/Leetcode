@@ -15,7 +15,7 @@
 |2021-05-05|Jump Game II                                           |28   ms|14.3  MB|       |        |
 |2021-05-06|Convert Sorted List to Binary Search Tree              |128  ms|20.5  MB|       |        |
 |2021-05-07|Delete Operation for Two Strings                       |272  ms|16.2  MB|       |        |
-|2021-05-08|Super Palindromes                                      |1104 ms|40.6  MB|       |        |
+|2021-05-08|Super Palindromes                                      |1104 ms|40.6  MB|88   ms|14.4  MB|
 |2021-05-09|Construct Target Array With Multiple Sums              |256  ms|20    MB|       |        |
 |2021-05-10|Count Primes                                           |6396 ms|389.3 MB|672  ms|91.9  MB|
 |2021-05-11|Maximum Points You Can Obtain from Cards               |400  ms|27.5  MB|       |        |
