@@ -147,7 +147,7 @@ Memory Usage: 351.6 MB
 
 
 # Avg: 4110.83
-class NumMatrix:
+class NumMatrix2:
 
     def __init__(self, matrix: List[List[int]]):
         row = len(matrix)
@@ -162,4 +162,30 @@ class NumMatrix:
         col = f'{col1}-{col2}'
         for row in range(row1, row2+1):
             ret += self.hash[row][col]
+        return ret
+
+
+"""
+11 / 11 test cases passed.
+Status: Accepted
+Runtime: 108 ms
+Memory Usage: 17.6 MB
+"""
+
+
+# Avg: 16.07
+class NumMatrix:
+
+    def __init__(self, matrix: List[List[int]]):
+        h = len(matrix)
+        w = len(matrix[0])
+        self.arr = [[0]*(w+1) for _ in range(h+1)]
+        for r in range(1, h+1):
+            for c in range(1, w+1):
+                self.arr[r][c] = self.arr[r-1][c] + self.arr[r][c-1] - \
+                                 self.arr[r-1][c-1] + matrix[r-1][c-1]
+
+    def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+        ret = self.arr[row2+1][col2+1] - self.arr[row2+1][col1] - \
+              self.arr[row1][col2+1] + self.arr[row1][col1]
         return ret
