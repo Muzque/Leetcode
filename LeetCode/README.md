@@ -20,6 +20,8 @@
 |2021-05-10|Count Primes                                           |6396 ms|389.3 MB|672  ms|91.9  MB|
 |2021-05-11|Maximum Points You Can Obtain from Cards               |400  ms|27.5  MB|       |        |
 |2021-05-12|Range Sum Query 2D - Immutable                         |3184 ms|351.6 MB|108  ms|17.6  MB|
+|2021-05-13|Ambiguous Coordinates                                  |48   ms|14.2  MB|       |        |
+
 
 ### Weekly Context ###
 |Week |#    |No.  |Title                                              |Runtime|Memory  |Runtime|Memory  |
