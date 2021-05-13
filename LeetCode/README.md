@@ -1,7 +1,7 @@
 # Leetcode
 
 ### Daily ###
-|#         |Title                                                  |Runtime|Memory  |Runtime|Memory  |
+|Date      |Title                                                  |Runtime|Memory  |Runtime|Memory  |
 |:--------:|:-----------------------------------------------------:|:-----:|:------:|:-----:|:------:|
 |2021-04-26|Furthest Building You Can Reach                        |5284 ms|28.8  MB|       |        |
 |2021-04-27|Power of Three                                         |64   ms|13.9  MB|       |        |
@@ -20,3 +20,8 @@
 |2021-05-10|Count Primes                                           |6396 ms|389.3 MB|672  ms|91.9  MB|
 |2021-05-11|Maximum Points You Can Obtain from Cards               |400  ms|27.5  MB|       |        |
 |2021-05-12|Range Sum Query 2D - Immutable                         |3184 ms|351.6 MB|108  ms|17.6  MB|
+
+### Weekly Context ###
+|Week |# |Title                                                  |Runtime|Memory  |Runtime|Memory  |
+|:---:|::|:-----------------------------------------------------:|:-----:|:------:|:-----:|:------:|
+|240  |1 |Maximum Population Year                                |44   ms|14.3  MB|       |        |
