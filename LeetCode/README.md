@@ -25,3 +25,5 @@
 |Week |#    |Title                                                  |Runtime|Memory  |Runtime|Memory  |
 |:---:|:---:|:-----------------------------------------------------:|:-----:|:------:|:-----:|:------:|
 |240  |1    |Maximum Population Year                                |44   ms|14.3  MB|       |        |
+|     |2    |Maximum Distance Between a Pair of Values              |1120 ms|32.2  MB|       |        |
+|     |3    |1856. Maximum Subarray Min-Product                     |TLE    |        |       |        |
