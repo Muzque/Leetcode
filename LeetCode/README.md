@@ -10,7 +10,7 @@ Examine your solution
 optional arguments:
   -h, --help            show this help message and exit
   -d DAILY, --daily DAILY
-                        select solutions
+                        select daily probluem
   -hi, --hide_inputs    hide inputs
   -a, --avg             test multiple times to get average runtime cost
   -c CASE, --case CASE  select one case to test by index
