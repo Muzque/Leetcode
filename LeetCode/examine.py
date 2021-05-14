@@ -147,7 +147,7 @@ if __name__ == '__main__':
         "-d",
         "--daily",
         type=str,
-        help="select solutions",
+        help="select daily problem",
         required=False,
     )
     parser.add_argument(
