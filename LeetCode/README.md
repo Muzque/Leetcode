@@ -46,5 +46,5 @@ optional arguments:
 |:---:|:---:|:---:|:-------------------------------------------------:|:-----:|:------:|:-----:|:------:|
 |240  |1    |1854 |Maximum Population Year                            |44   ms|14.3  MB|       |        |
 |     |2    |1855 |Maximum Distance Between a Pair of Values          |1120 ms|32.2  MB|       |        |
-|     |3    |1856 |Maximum Subarray Min-Product                       |TLE    |        |       |        |
+|     |3    |1856 |Maximum Subarray Min-Product                       |TLE    |        |1080 ms|25.8  MB|
 |     |4    |1857 |Largest Color Value in a Directed Graph            |-      |        |       |        |
