@@ -3,7 +3,8 @@ import importlib
 import argparse
 from typing import Optional
 
-KEY_CATEGORY = 'python3'
+KEY_DAILY = 'python3'
+KEY_WEEKLY = 'weekly'
 KEY_SOLUTION = 'Solution'
 KEY_TESTCASE = 'testcases'
 TEST_TIMES = 10
@@ -116,8 +117,15 @@ class Examine:
 
 
 def main(args):
-    filename = args.solution
-    solution, testcases = select_problem(KEY_CATEGORY, filename)
+    if args.weekly:
+        week, filename = args.weekly.split('.')
+        category = f'{KEY_WEEKLY}.{week}'
+    elif args.daily:
+        category = KEY_DAILY
+        filename = args.daily
+    else:
+        raise Exception('Must be daily or weekly')
+    solution, testcases = select_problem(category, filename)
     method = find_method(solution)
     loop = TEST_TIMES if args.avg else 1
     runner = Examine(
@@ -136,11 +144,11 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Examine your solution")
     parser.add_argument(
-        "-s",
-        "--solution",
+        "-d",
+        "--daily",
         type=str,
         help="select solutions",
-        required=True,
+        required=False,
     )
     parser.add_argument(
         "-hi",
@@ -159,6 +167,13 @@ if __name__ == '__main__':
         "--case",
         type=str,
         help="select one case to test by index",
-        required=False
+        required=False,
+    )
+    parser.add_argument(
+        "-w",
+        "--weekly",
+        type=str,
+        help="select problem number of weekly contest",
+        required=False,
     )
     main(parser.parse_args())
