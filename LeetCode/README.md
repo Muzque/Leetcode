@@ -2,7 +2,7 @@
 ## Usage
 ```
 $ python examine.py -h
-```
+
 usage: examine.py [-h] [-d DAILY] [-hi] [-a] [-c CASE] [-w WEEKLY]
 
 Examine your solution
@@ -16,7 +16,7 @@ optional arguments:
   -c CASE, --case CASE  select one case to test by index
   -w WEEKLY, --weekly WEEKLY
                         select problem number of weekly contest
-
+```
 
 ### Daily ###
 |Date      |Title                                                  |Runtime|Memory  |Runtime|Memory  |
