@@ -92,14 +92,14 @@ answer = 14
     # breaks the monotonic and pop out last item
     min_value = 3
     stack = [(-1, 0), (1, 1), (2, 3)]
-    # calculate max: previous_value * (diff sum)
+    # calculate max: min_value * (diff sum)
     max_value = 3 * (6 - 3) = 9
     running_max = 9
     ...
     # still breaks the monotonic and pop out last item
     min_value = 2
     stack = [(-1, 0), (1, 1)]
-    # calculate max: previous_value * (diff sum)
+    # calculate max: min_value * (diff sum)
     max_value = 2 * (6 - 1) = 10
     running_max = 10
     ...
@@ -110,14 +110,14 @@ answer = 14
     # breaks the monotonic
     min_value = 2
     stack = [(-1, 0), (1, 1)]
-    # calculate max: previous_value * (diff sum)
+    # calculate max: min_value * (diff sum)
     max_value = 2 * (8 - 1) = 14
     running_max = 14
     ...
     # still breaks the monotonic
     min_value = 1
     stack = [(-1, 0)]
-    # calculate max: previous_value * (diff sum)
+    # calculate max: min_value * (diff sum)
     max_value = 1 * (8 - 0) = 8
     ...
     running_sum = 8 + 0 = 8
