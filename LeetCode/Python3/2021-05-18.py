@@ -87,7 +87,7 @@ Memory Usage: 24.2 MB
 """
 
 
-class Solution:
+class Solution1:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
         cache = defaultdict(list)
         for p in paths:
@@ -95,4 +95,26 @@ class Solution:
             for file in files.split(' '):
                 fpath, content = file.split('(')
                 cache[content].append(f'{root}/{fpath}')
+        return [arr for arr in cache.values() if len(arr) > 1]
+
+
+"""
+161 / 161 test cases passed.
+Status: Accepted
+Runtime: 100 ms
+Memory Usage: 26.5 MB
+"""
+
+from hashlib import md5
+
+
+class Solution:
+    def findDuplicate(self, paths: List[str]) -> List[List[str]]:
+        cache = defaultdict(list)
+        for p in paths:
+            root, files = p.split(' ', 1)
+            for file in files.split(' '):
+                fpath, content = file.split('(')
+                m = md5(content.encode('utf-8')).hexdigest()
+                cache[m].append(f'{root}/{fpath}')
         return [arr for arr in cache.values() if len(arr) > 1]
