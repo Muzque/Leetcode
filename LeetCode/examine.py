@@ -3,7 +3,7 @@ import importlib
 import argparse
 from typing import Optional
 
-KEY_DAILY = 'python3'
+KEY_DAILY = 'daily'
 KEY_WEEKLY = 'weekly'
 KEY_SOLUTION = 'Solution'
 KEY_TESTCASE = 'testcases'
