@@ -19,9 +19,9 @@ optional arguments:
 ```
 
 ### Daily ###
-|Date      |No.  |Difficulty|Title                                                  |Runtime|Memory  |Runtime|Memory  |
-|:--------:|:---:|:--------:|:-----------------------------------------------------:|:-----:|:------:|:-----:|:------:|
-|2021-04-26|1642 |Medium    |Furthest Building You Can Reach                        |5284 ms|28.8  MB|       |        |
+|Date      |No.  |Diff|Title                                                  |Runtime|Memory  |Runtime|Memory  |
+|:--------:|:---:|:--:|:-----------------------------------------------------:|:-----:|:------:|:-----:|:------:|
+|2021-04-26|1642 |M|Furthest Building You Can Reach                        |5284 ms|28.8  MB|       |        |
 |2021-04-27|326  |Easy      |Power of Three                                         |64   ms|13.9  MB|       |        |
 |2021-04-28|63   |Medium    |Unique Paths II                                        |40   ms|14.3  MB|       |        |
 |2021-04-29|34   |Medium    |Find First and Last Position of Element in Sorted Array|88   ms|15.5  MB|       |        |
