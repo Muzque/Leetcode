@@ -45,6 +45,7 @@ optional arguments:
 |2021-05-16|968  |H   |Binary Tree Cameras                                    |44   ms|14.7  MB|       |        |
 |2021-05-17|1048 |M   |Longest String Chain                                   |128  ms|14.7  MB|       |        |
 |2021-05-18|609  |M   |Find Duplicate File in System                          |92   ms|24.2  MB|       |        |
+|2021-05-19|462  |M   |Minimum Moves to Equal Array Elements II               |84   ms|15.4  MB|       |        |
 
 
 ### Weekly Context ###
