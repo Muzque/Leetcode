@@ -17,6 +17,7 @@ optional arguments:
   -w WEEKLY, --weekly WEEKLY
                         select problem number of weekly contest
 ```
+* Difficulty: (E) Easy, (M) Medium, (H) Hard
 
 ### Daily ###
 |Date      |No.  |*   |Title                                                  |Runtime|Memory  |Runtime|Memory  |
