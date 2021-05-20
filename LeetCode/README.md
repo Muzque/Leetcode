@@ -46,7 +46,7 @@ optional arguments:
 |2021-05-17|1048 |M   |Longest String Chain                                   |128  ms|14.7  MB|       |        |
 |2021-05-18|609  |M   |Find Duplicate File in System                          |92   ms|24.2  MB|       |        |
 |2021-05-19|462  |M   |Minimum Moves to Equal Array Elements II               |84   ms|15.4  MB|       |        |
-
+|2021-05-20|102  |M   |Binary Tree Level Order Traversal                      |36   ms|14.7  MB|       |        |
 
 ### Weekly Context ###
 |Week |#    |No.  |Title                                              |Runtime|Memory  |Runtime|Memory  |
@@ -55,3 +55,7 @@ optional arguments:
 |     |2    |1855 |Maximum Distance Between a Pair of Values          |1120 ms|32.2  MB|       |        |
 |     |3    |1856 |Maximum Subarray Min-Product                       |TLE    |        |1080 ms|25.8  MB|
 |     |4    |1857 |Largest Color Value in a Directed Graph            |-      |        |       |        |
+|241  |1    |     |                                                   |       |        |       |        |
+|     |2    |     |                                                   |       |        |       |        |
+|     |3    |     |                                                   |       |        |       |        |
+|     |4    |     |                                                   |       |        |       |        |
