@@ -1,3 +1,6 @@
+from typing import List
+
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -5,8 +8,9 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 """
-Runtime: 48 ms, faster than 5.13% of Python3 online submissions 
+Runte: 48 ms, faster than 5.13% of Python3 online submissions 
 Memory Usage: 14.1 MB, less than 73.21% of Python3 online submissions
 """
 
@@ -20,8 +24,6 @@ class Solution:
         self._rec(node.right)
 
     def preorderTraversal(self, root: TreeNode) -> List[int]:
-        if root is None:
-            return []
         self.arr = []
         self._rec(root)
         return self.arr
