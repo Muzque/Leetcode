@@ -49,13 +49,13 @@ optional arguments:
 |2021-05-20|102  |M   |Binary Tree Level Order Traversal                      |36   ms|14.7  MB|       |        |
 
 ### Weekly Context ###
-|Week |#    |No.  |Title                                              |Runtime|Memory  |Runtime|Memory  |
-|:---:|:---:|:---:|:-------------------------------------------------:|:-----:|:------:|:-----:|:------:|
-|240  |1    |1854 |Maximum Population Year                            |44   ms|14.3  MB|       |        |
-|     |2    |1855 |Maximum Distance Between a Pair of Values          |1120 ms|32.2  MB|       |        |
-|     |3    |1856 |Maximum Subarray Min-Product                       |TLE    |        |1080 ms|25.8  MB|
-|     |4    |1857 |Largest Color Value in a Directed Graph            |-      |        |       |        |
-|241  |1    |     |                                                   |       |        |       |        |
-|     |2    |     |                                                   |       |        |       |        |
-|     |3    |     |                                                   |       |        |       |        |
-|     |4    |     |                                                   |       |        |       |        |
+|Week |#    |No.  |*   |Title                                              |Runtime|Memory  |Runtime|Memory  |
+|:---:|:---:|:---:|:--:|:-------------------------------------------------:|:-----:|:------:|:-----:|:------:|
+|240  |1    |1854 |E   |Maximum Population Year                            |44   ms|14.3  MB|       |        |
+|     |2    |1855 |M   |Maximum Distance Between a Pair of Values          |1120 ms|32.2  MB|       |        |
+|     |3    |1856 |M   |Maximum Subarray Min-Product                       |TLE    |        |1080 ms|25.8  MB|
+|     |4    |1857 |H   |Largest Color Value in a Directed Graph            |-      |        |       |        |
+|241  |1    |1863 |E   |Sum of All Subset XOR Totals                       |112  ms|14.8  MB|       |        |
+|     |2    |     |    |                                                   |       |        |       |        |
+|     |3    |     |    |                                                   |       |        |       |        |
+|     |4    |     |    |                                                   |       |        |       |        |
