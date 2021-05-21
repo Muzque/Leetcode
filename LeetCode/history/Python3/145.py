@@ -15,7 +15,7 @@ Memory Usage: 14.2 MB, less than 74.26% of Python3 online submissions
 """
 
 
-class Solution:
+class Solution1:
     def _rec(self, node):
         if node is None:
             return
@@ -27,3 +27,38 @@ class Solution:
         self.arr = []
         self._rec(root)
         return self.arr
+
+
+"""
+Runtime: 48 ms, faster than 5.17% of Python3 online submissions
+Memory Usage: 14.3 MB, less than 74.26% of Python3 online submissions
+"""
+
+
+class Solution2:
+    def _rec(self, node, arr):
+        if node is None:
+            return
+        if node.left:
+            arr = self._rec(node.left, arr)
+        if node.right:
+            arr = self._rec(node.right, arr)
+        arr.append(node.val)
+        return arr
+
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        return self._rec(root, [])
+
+
+"""
+Runtime: 36 ms, faster than 5.17% of Python3 online submissions 
+Memory Usage: 14.2 MB, less than 46.01% of Python3 online submissions 
+"""
+
+
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        if root is None:
+            return []
+        return self.postorderTraversal(root.left) + self.postorderTraversal(
+            root.right) + [root.val]
