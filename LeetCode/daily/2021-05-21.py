@@ -51,7 +51,8 @@ Memory Usage: 14.4 MB
 """
 
 
-class Solution:
+# Avg: 0.014710426330566406 ms
+class Solution1:
     def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
         h = len(pattern)
         result = []
@@ -68,3 +69,38 @@ class Solution:
                 if len(visited) == len(cache):
                     result.append(word)
         return result
+
+
+"""
+46 / 46 test cases passed.
+Status: Accepted
+Runtime: 44 ms
+Memory Usage: 14.1 MB
+"""
+
+
+# Avg: 0.02155303955078125 ms
+class Solution2:
+    def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
+        result = []
+        arr_pat = [pattern.index(p) for p in pattern]
+        for word in words:
+            arr_w = [word.index(w) for w in word]
+            if arr_w == arr_pat:
+                result.append(word)
+        return result
+
+
+"""
+46 / 46 test cases passed.
+Status: Accepted
+Runtime: 32 ms
+Memory Usage: 14.2 MB
+"""
+
+
+# Avg: 0.015020370483398438 ms
+class Solution:
+    def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
+        h = len(set(pattern))
+        return list(filter(lambda w: len(set(w)) == h == len(set(zip(w, pattern))), words))
