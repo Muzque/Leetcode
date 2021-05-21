@@ -49,7 +49,7 @@ Memory Usage: 14.7 MB, less than 42.17% of Python3 online submissions
 import threading
 
 
-class FooBar:
+class FooBar1:
     def __init__(self, n):
         self.n = n
         self.tl1 = threading.Lock()
@@ -68,3 +68,30 @@ class FooBar:
             self.tl2.acquire()
             printBar()
             self.tl1.release()
+
+
+"""
+Runtime: 64 ms, faster than 16.94% of Python3 online submissions
+Memory Usage: 14.9 MB, less than 15.65% of Python3 online submissions
+"""
+
+
+class FooBar:
+    def __init__(self, n):
+        self.n = n
+        self.te1 = threading.Event()
+        self.te2 = threading.Event()
+
+    def foo(self, printFoo: 'Callable[[], None]') -> None:
+        for i in range(self.n):
+            printFoo()
+            self.te1.clear()
+            self.te2.set()
+            self.te1.wait()
+
+    def bar(self, printBar: 'Callable[[], None]') -> None:
+        for i in range(self.n):
+            self.te2.wait()
+            printBar()
+            self.te2.clear()
+            self.te1.set()
