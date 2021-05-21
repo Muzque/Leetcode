@@ -10,8 +10,8 @@ class TreeNode:
 
 
 """
-Runtime: 40 ms, faster than 5.07% of Python3 online submissions
-Memory Usage: 14.2 MB, less than 46.27% of Python3 online submissions
+Runtime: 32 ms, faster than 52.65% of Python3 online submissions 
+Memory Usage: 14.1 MB, less than 74.55% of Python3 online submissions
 """
 
 
@@ -22,7 +22,6 @@ class Solution:
         self._rec(node.left)
         self.arr.append(node.val)
         self._rec(node.right)
-        return node
 
     def inorderTraversal(self, root: TreeNode) -> List[int]:
         if root is None:
