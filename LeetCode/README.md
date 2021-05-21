@@ -47,6 +47,7 @@ optional arguments:
 |2021-05-18|609  |M   |Find Duplicate File in System                          |92   ms|24.2  MB|       |        |
 |2021-05-19|462  |M   |Minimum Moves to Equal Array Elements II               |84   ms|15.4  MB|       |        |
 |2021-05-20|102  |M   |Binary Tree Level Order Traversal                      |36   ms|14.7  MB|       |        |
+|2021-05-21|890  |M   |Find and Replace Pattern                               |28   ms|14.4  MB|       |        |
 
 ### Weekly Context ###
 |Week |#    |No.  |*   |Title                                              |Runtime|Memory  |Runtime|Memory  |
