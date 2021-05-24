@@ -39,6 +39,18 @@ Memory Usage: 14 MB
 """
 
 
-class Solution:
+class Solution1:
     def toLowerCase(self, s: str) -> str:
         return ''.join(chr(o+32) if 91 > (o := ord(a)) > 64 else a for a in s)
+
+
+"""
+8 / 8 test cases passed.
+Status: Accepted
+Runtime: 28 ms
+Memory Usage: 14.2 MB
+"""
+
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        return ''.join(chr(ord(s[i])+32) if 'Z' >= s[i] >= 'A' else s[i] for i in range(len(s)))
