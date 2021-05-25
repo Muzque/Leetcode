@@ -51,6 +51,7 @@ optional arguments:
 |2021-05-22|     |    |                                                       |       |        |       |        |
 |2021-05-23|     |    |                                                       |       |        |       |        |
 |2021-05-24|709  |E   |To Lower Case                                          |28   ms|14.0  MB|       |        |
+|2021-05-25|150  |M   |Evaluate Reverse Polish Notation                       |56   ms|14.6  MB|       |        |
 
 ### Weekly Context ###
 |Week |#    |No.  |*   |Title                                              |Runtime|Memory  |Runtime|Memory  |
