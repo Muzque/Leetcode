@@ -109,7 +109,8 @@ Memory Usage: 17.5 MB
 """
 
 
-class Solution:
+# Loop avg. cost: 0.05321502685546875 ms
+class Solution1:
     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
         products.sort()
         cache = dict((searchWord[:i+1], []) for i in range(len(searchWord)))
@@ -118,3 +119,24 @@ class Solution:
                 if len(cache[word]) < 3 and word == product[:i+1]:
                     cache[word].append(product)
         return [arr for arr in cache.values()]
+
+
+"""
+41 / 41 test cases passed.
+Status: Accepted
+Runtime: 480 ms
+Memory Usage: 17.2 MB
+"""
+
+
+# Loop avg. cost: 0.03192424774169922 ms
+class Solution:
+    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+        result = []
+        prefix = ''
+        for sw in searchWord:
+            prefix += sw
+            arr = [prod for prod in products if prod.startswith(prefix)]
+            arr.sort()
+            result.append(arr[:3])
+        return result
