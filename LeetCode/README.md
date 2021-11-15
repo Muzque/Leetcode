@@ -58,6 +58,7 @@ optional arguments:
 |2021-05-29|     |    |                                                       |       |        |       |        |
 |2021-05-30|164  |H   |Maximum Gap                                            |84   ms|15.1  MB|       |        |
 |2021-05-31|1268 |M   |Search Suggestions System                              |604  ms|17.5  MB|       |        |
+|2021-11-15|368  |M   |Largest Divisible Subset                               |436  ms|14.6  MB|       |        |
 
 ### Weekly Context ###
 |Week |#    |No.  |*   |Title                                              |Runtime|Memory  |Runtime|Memory  |
