@@ -3,7 +3,7 @@
 https://leetcode.com/problems/print-zero-even-odd/submissions/
 """
 """
-Suppose you are given the following code:
+Suppose you are given the following exercise:
 
 class ZeroEvenOdd {
   public ZeroEvenOdd(int n) { ... }      // constructor

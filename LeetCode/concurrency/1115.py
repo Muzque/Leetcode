@@ -3,7 +3,7 @@
 https://leetcode.com/problems/print-foobar-alternately/
 """
 """
-Suppose you are given the following code:
+Suppose you are given the following exercise:
 
 class FooBar {
   public void foo() {

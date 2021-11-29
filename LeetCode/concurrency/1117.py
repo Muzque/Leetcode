@@ -25,7 +25,7 @@ The key is just that threads pass the barrier in complete sets; thus, if we
 examine the sequence of threads that bond and divide them into groups of three, 
 each group should contain one oxygen and two hydrogen threads.
 
-Write synchronization code for oxygen and hydrogen molecules that enforces 
+Write synchronization exercise for oxygen and hydrogen molecules that enforces 
 these constraints.
 
  
