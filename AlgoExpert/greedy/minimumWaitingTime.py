@@ -15,9 +15,8 @@ testcases = [
 
 def minimumWaitingTime(queries):
     queries.sort()
-    queries.pop()
     ret = 0
-    for i in range(len(queries)):
+    for i in range(len(queries)-1):
         if i > 0:
             queries[i] += queries[i-1]
         ret += queries[i]
