@@ -35,11 +35,11 @@ def gen_vertices(nodes) -> List[BinaryTree]:
 
     for i in range(len(vertices)):
         node = nodes[i]
-        edge = vertices[i]
+        vertex = vertices[i]
         left = get_index(node['left'])
         right = get_index(node['right'])
-        edge.left = None if left is None else vertices[left]
-        edge.right = None if right is None else vertices[right]
+        vertex.left = None if left is None else vertices[left]
+        vertex.right = None if right is None else vertices[right]
     return vertices
 
 
