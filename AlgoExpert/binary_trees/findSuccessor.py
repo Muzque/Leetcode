@@ -31,7 +31,7 @@ testcases = [
     },
 ]
 
-from lib import gen_edges, run_tests
+from lib import gen_vertices, run_tests
 
 
 # This is an input class. Do not edit.
@@ -59,19 +59,19 @@ def findSuccessor(tree, node):
 
 
 if __name__ == '__main__':
-    wrapedcases = []
+    wrapped_cases = []
     for tc in testcases:
-        edges = gen_edges(tc['input']['tree']['nodes'])
-        node_input = edges[int(tc['input']['node']) - 1]
-        node_output = edges[tc['output'] - 1] if tc['output'] is not None else tc['output']
-        wrapedcases.append({
+        vertices = gen_vertices(tc['input']['tree']['nodes'])
+        node_input = vertices[int(tc['input']['node']) - 1]
+        node_output = vertices[tc['output'] - 1] if tc['output'] is not None else tc['output']
+        wrapped_cases.append({
             'input': {
-                'tree': edges[0],
+                'tree': vertices[0],
                 'node': node_input
             },
             'output': node_output,
         })
     run_tests(
-        testcases=wrapedcases,
+        testcases=wrapped_cases,
         function=findSuccessor,
     )

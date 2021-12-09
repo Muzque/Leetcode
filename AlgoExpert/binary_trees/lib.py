@@ -26,25 +26,25 @@ def get_index(index: Optional[str]) -> Optional[int]:
     return int(index) - 1
 
 
-def gen_edges(nodes) -> List[BinaryTree]:
-    edges = []
+def gen_vertices(nodes) -> List[BinaryTree]:
+    vertices = []
     for i in range(len(nodes)):
         obj = nodes[i]
         node = BinaryTree(value=obj['value'])
-        edges.append(node)
+        vertices.append(node)
 
-    for i in range(len(edges)):
+    for i in range(len(vertices)):
         node = nodes[i]
-        edge = edges[i]
+        edge = vertices[i]
         left = get_index(node['left'])
         right = get_index(node['right'])
-        edge.left = None if left is None else edges[left]
-        edge.right = None if right is None else edges[right]
-    return edges
+        edge.left = None if left is None else vertices[left]
+        edge.right = None if right is None else vertices[right]
+    return vertices
 
 
 def gen_tree_root(nodes) -> BinaryTree:
-    edges = gen_edges(nodes)
+    edges = gen_vertices(nodes)
     return edges[0]
 
 
