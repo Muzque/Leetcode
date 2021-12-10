@@ -14,7 +14,7 @@ testcases = [
                 "root": "1"
             }
         },
-        'output': 1,
+        'output': '1',
     },
     {
         'input': {
@@ -61,12 +61,14 @@ def findSuccessor(tree, node):
 if __name__ == '__main__':
     wrapped_cases = []
     for tc in testcases:
-        vertices = gen_vertices(tc['input']['tree']['nodes'])
-        node_input = vertices[int(tc['input']['node']) - 1]
-        node_output = vertices[tc['output'] - 1] if tc['output'] is not None else tc['output']
+        inp = tc['input']
+        vertices = gen_vertices(inp['tree']['nodes'])
+        root = vertices[inp['tree']['root']]
+        node_input = vertices[inp['node']]
+        node_output = vertices[tc['output']] if tc['output'] is not None else tc['output']
         wrapped_cases.append({
             'input': {
-                'tree': vertices[0],
+                'tree': root,
                 'node': node_input
             },
             'output': node_output,
