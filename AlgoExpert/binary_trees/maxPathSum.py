@@ -91,7 +91,7 @@ def maxPathSum(tree):
     return ret
 
 
-if __name__ == '__main__':
+def main():
     wrapped_cases = []
     for tc in testcases:
         root = gen_tree_root(**tc['input']['tree'])

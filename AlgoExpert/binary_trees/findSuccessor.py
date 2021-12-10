@@ -58,7 +58,7 @@ def findSuccessor(tree, node):
             return arr[i+1]
 
 
-if __name__ == '__main__':
+def main():
     wrapped_cases = []
     for tc in testcases:
         inp = tc['input']

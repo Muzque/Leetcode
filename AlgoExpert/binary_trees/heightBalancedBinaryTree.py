@@ -93,7 +93,7 @@ def heightBalancedBinaryTree(tree):
     return is_balanced
 
 
-if __name__ == '__main__':
+def main():
     wrapped_cases = []
     for tc in testcases:
         tree = gen_tree_root(tc['input']['tree']['nodes'])
