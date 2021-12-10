@@ -20,12 +20,6 @@ class BinaryTree:
         self.parent = parent
 
 
-def get_index(index: Optional[str]) -> Optional[int]:
-    if index is None:
-        return None
-    return int(index) - 1
-
-
 def gen_vertices(nodes) -> Dict[str, BinaryTree]:
     vertices = {}
     for obj in nodes:
