@@ -1,4 +1,4 @@
-from typing import Optional, List
+from typing import Optional, List, Dict
 """
 Example:
     "nodes": [
@@ -26,34 +26,36 @@ def get_index(index: Optional[str]) -> Optional[int]:
     return int(index) - 1
 
 
-def gen_vertices(nodes) -> List[BinaryTree]:
-    vertices = []
-    for i in range(len(nodes)):
-        obj = nodes[i]
-        node = BinaryTree(value=obj['value'])
-        vertices.append(node)
+def gen_vertices(nodes) -> Dict[str, BinaryTree]:
+    vertices = {}
+    for obj in nodes:
+        vertices[obj['id']] = BinaryTree(value=obj['value'])
 
-    for i in range(len(vertices)):
-        node = nodes[i]
-        vertex = vertices[i]
-        left = get_index(node['left'])
-        right = get_index(node['right'])
-        vertex.left = None if left is None else vertices[left]
-        vertex.right = None if right is None else vertices[right]
+    for obj in nodes:
+        node = vertices[obj['id']]
+        node.left = vertices[obj['left']] if obj['left'] is not None else None
+        node.right = vertices[obj['right']] if obj['right'] is not None else None
     return vertices
 
 
-def gen_tree_root(nodes) -> BinaryTree:
+def gen_tree_root(nodes, root='1') -> BinaryTree:
     edges = gen_vertices(nodes)
-    return edges[0]
+    return edges[root]
+
+
+def display_test_result(index, case, result):
+    is_passed = result == case['output']
+    result_string = 'Pass!' if is_passed else 'Fail!'
+    print(f'Question {index}:')
+    print(f'Test result: {result_string}')
+    if not is_passed:
+        print(f'Input: {case["input"]}')
+        print(f'Answer: {case["output"]}')
+        print(f'Yours: {result}')
+    print('-' * 87)
 
 
 def run_tests(testcases, function):
     for idx, tc in enumerate(testcases, 1):
-        print(f'Question {idx}:')
-        print(f'Input: {tc["input"]}')
-        print(f'Answer: {tc["output"]}')
         ret = function(**tc['input'])
-        print(f'Yours: {ret}')
-        assert(ret == tc['output'])
-        print('-'*87)
+        display_test_result(idx, tc, ret)
