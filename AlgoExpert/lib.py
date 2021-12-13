@@ -1,3 +1,4 @@
+import operator
 from typing import Optional, List, Dict
 """
 Example:
@@ -45,12 +46,30 @@ def linkedList2array(linked_list):
     return array
 
 
+def sort_by_layer(a, b, layer: int):
+    if layer == 0:
+        sorted_a = sorted(a)
+        sorted_b = sorted(b)
+    elif layer == 1:
+        sorted_a = [sorted(arr) for arr in a]
+        sorted_a = sorted(sorted_a, key=operator.itemgetter(0))
+        sorted_b = [sorted(arr) for arr in b]
+        sorted_b = sorted(sorted_b, key=operator.itemgetter(0))
+    else:
+        raise Exception(f'Sorting layer exceed: {layer}')
+    return sorted_a, sorted_b
+
+
 def check_result(mode: str, a, b):
     if mode == 'default':
         return a == b
     if mode == 'linkedList':
         tmp_a = linkedList2array(a)
         tmp_b = linkedList2array(b)
+        return tmp_a == tmp_b
+    if mode.startswith('sort'):
+        layer = int(mode.lstrip('sort') or '0')
+        tmp_a, tmp_b = sort_by_layer(a, b, layer)
         return tmp_a == tmp_b
 
 

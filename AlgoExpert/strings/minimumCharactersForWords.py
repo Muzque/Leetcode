@@ -3,7 +3,9 @@
 """
 testcases = [
     {
-        'input': ["this", "that", "did", "deed", "them!", "a"],
+        'input': {
+            'words': ["this", "that", "did", "deed", "them!", "a"]
+        },
         'output': ["!", "a", "d", "d", "e", "e", "h", "i", "m", "s", "t", "t"],
     },
 ]
@@ -21,6 +23,17 @@ def minimumCharactersForWords(words):
 """
 
 
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=minimumCharactersForWords,
+        mode='sort',
+    )
+
+
 def minimumCharactersForWords(words):
     ret = []
     cached = {}
@@ -34,10 +47,3 @@ def minimumCharactersForWords(words):
                 cached[k] = cached.get(k, 0) + diff
                 ret += [k] * diff
     return ret
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = minimumCharactersForWords(tc['input'])
-        print(ret)
-        assert(ret == tc['output'])

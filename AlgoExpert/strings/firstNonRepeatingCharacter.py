@@ -5,14 +5,28 @@ from collections import defaultdict
 
 testcases = [
     {
-        'input': 'abcceedfdfa',
+        'input': {
+            'string': 'abcceedfdfa'
+        },
         'output': 1,
     },
     {
-        'input': 'abbcac',
+        'input': {
+            'string': 'abbcac'
+        },
         'output': -1,
     },
 ]
+
+
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=firstNonRepeatingCharacter,
+    )
 
 
 def firstNonRepeatingCharacter(string):
@@ -23,9 +37,3 @@ def firstNonRepeatingCharacter(string):
         if len(v) == 1:
             return v[0]
     return -1
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = firstNonRepeatingCharacter(tc['input'])
-        assert(ret == tc['output'])

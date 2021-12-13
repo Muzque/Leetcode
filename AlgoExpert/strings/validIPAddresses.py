@@ -4,7 +4,9 @@
 
 testcases = [
     {
-        'input': '1921680',
+        'input': {
+            'string': '1921680'
+        },
         'output': [
             "1.9.216.80",
             "1.92.16.80",
@@ -20,6 +22,17 @@ testcases = [
         ],
     },
 ]
+
+
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=validIPAddresses,
+        mode='sort',
+    )
 
 
 def find_all():
@@ -47,9 +60,3 @@ def validIPAddresses(string):
             if all(validRule(n) for n in sarr):
                 ret.append('.'.join(sarr))
     return ret
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = validIPAddresses(tc['input'])
-        assert(ret == tc['output'])

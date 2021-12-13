@@ -3,10 +3,23 @@
 """
 testcases = [
     {
-        'input': ("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"),
+        'input': {
+            'characters': "Bste!hetsi ogEAxpelrt x ",
+            'document': "AlgoExpert is the Best!"
+        },
         'output': True,
     },
 ]
+
+
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=generateDocument,
+    )
 
 
 def count(string):
@@ -24,9 +37,3 @@ def generateDocument(characters, document):
         if r < v:
             return False
     return True
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = generateDocument(*tc['input'])
-        assert(ret == tc['output'])

@@ -3,14 +3,29 @@
 """
 testcases = [
     {
-        'input': ('xyz', 2),
+        'input': {
+            'string': 'xyz',
+            'key': 2
+        },
         'output': 'zab',
     },
     {
-        'input': ('abc', 52),
+        'input': {
+            'string': 'abc',
+            'key': 52
+        },
         'output': 'abc'
     },
 ]
+
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=caesarCipherEncryptor,
+    )
 
 
 def caesarCipherEncryptor(string, key):
@@ -19,13 +34,3 @@ def caesarCipherEncryptor(string, key):
         n = ord(s) + key % 26
         arr.append(n if n < 123 else 96 + (n - 122))
     return ''.join(chr(i) for i in arr)
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = caesarCipherEncryptor(*tc['input'])
-        try:
-            assert(ret == tc['output'])
-        except Exception as e:
-            print(ret)
-            raise e

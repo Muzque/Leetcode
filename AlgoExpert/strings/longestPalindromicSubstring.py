@@ -2,12 +2,16 @@
 
 """
 testcases = [
-    # {
-    #     'input': 'abaxyzzyxf',
-    #     'output': 'xyzzyx',
-    # },
     {
-        'input': 'a',
+        'input': {
+            'string': 'abaxyzzyxf'
+        },
+        'output': 'xyzzyx',
+    },
+    {
+        'input': {
+            'string': 'a'
+        },
         'output': 'a'
     },
 ]
@@ -45,6 +49,16 @@ def longestPalindromicSubstring(string):
 """
 
 
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=longestPalindromicSubstring,
+    )
+
+
 def isPalindromic(string):
     for i in range(len(string) // 2):
         if string[i] != string[len(string) - i - 1]:
@@ -60,9 +74,3 @@ def longestPalindromicSubstring(string):
             if len(substring) > len(ret) and isPalindromic(substring):
                 ret = substring
     return ret
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = longestPalindromicSubstring(tc['input'])
-        assert(ret == tc['output'])

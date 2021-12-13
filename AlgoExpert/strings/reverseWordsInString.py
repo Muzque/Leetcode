@@ -3,14 +3,28 @@
 """
 testcases = [
     {
-        'input': "AlgoExpert is the best!",
+        'input': {
+            'string': "AlgoExpert is the best!"
+        },
         'output': 'best! the is AlgoExpert',
     },
     {
-        'input': 'this      string     has a     lot of   whitespace',
+        'input': {
+            'string': 'this      string     has a     lot of   whitespace'
+        },
         'output': 'whitespace   of lot     a has     string      this'
     },
 ]
+
+
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=reverseWordsInString,
+    )
 
 
 def reverseWordsInString(string):
@@ -22,9 +36,3 @@ def reverseWordsInString(string):
             pt = i
     ret += string[:pt]
     return ret
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = reverseWordsInString(tc['input'])
-        assert(ret == tc['output'])

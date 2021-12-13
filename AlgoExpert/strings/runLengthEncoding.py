@@ -3,10 +3,22 @@
 """
 testcases = [
     {
-        'input': 'AAAAAAAAAAAAABBCCCCDD',
+        'input': {
+            'string': 'AAAAAAAAAAAAABBCCCCDD'
+        },
         'output': '9A4A2B4C2D',
     },
 ]
+
+
+from lib import run_tests
+
+
+def main():
+    run_tests(
+        testcases=testcases,
+        function=runLengthEncoding,
+    )
 
 
 def runLengthEncoding(string):
@@ -22,9 +34,3 @@ def runLengthEncoding(string):
             count += 1
     ret += f'{count}{word}'
     return ret
-
-
-if __name__ == '__main__':
-    for tc in testcases:
-        ret = runLengthEncoding(tc['input'])
-        assert(ret == tc['output'])
