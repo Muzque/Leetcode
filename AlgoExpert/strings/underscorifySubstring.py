@@ -30,6 +30,13 @@ testcases = [
         },
         'output': '_a_b_a_b_a_b_a_b_a_b_a_b_a_b_a_b_a_b_a_b_a_b_a_b_a_b_aa_b_a_b_aaa_bb_a_b_a_b_aa_'
     },
+    {
+        'input': {
+            'string': 'testeststt est st t abc test',
+            'substring': 'test'
+        },
+        'output': '_testest_stt est st t abc _test_'
+    },
 ]
 
 
