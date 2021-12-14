@@ -30,7 +30,7 @@ testcases = [
     },
 ]
 
-from lib import gen_linked_list, run_tests
+from lib import gen_linked_list_head, run_tests
 
 
 # This is an input class. Do not edit.
@@ -57,8 +57,8 @@ def main():
     wrapped_cases = []
     key = 'linkedList'
     for tc in testcases:
-        head = gen_linked_list(**tc['input'][key])
-        head_ans = gen_linked_list(**tc['output'])
+        head = gen_linked_list_head(**tc['input'][key])
+        head_ans = gen_linked_list_head(**tc['output'])
         wrapped_cases.append({
             'input': {
                 key: head,

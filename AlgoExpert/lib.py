@@ -1,3 +1,4 @@
+import logging
 import operator
 from typing import Optional, List, Dict
 """
@@ -82,14 +83,20 @@ def display_test_result(index, case, result, mode: str):
         print(f'Input: {case["input"]}')
         print(f'Answer: {case["output"]}')
         print(f'Yours: {result}')
-    print('-' * 87)
 
 
 def run_tests(testcases, function, mode='default'):
     print(f'Checker mode: {mode}')
     for idx, tc in enumerate(testcases, 1):
-        ret = function(**tc['input'])
-        display_test_result(idx, tc, ret, mode)
+        try:
+            ret = function(**tc['input'])
+            display_test_result(idx, tc, ret, mode)
+        except Exception as e:
+            ret = str(e)
+            display_test_result(idx, tc, ret, mode)
+            print('!!! Exception raised !!!')
+            logging.error(e, exc_info=True)
+        print('-' * 87)
 
 
 class LinkedList:
@@ -98,7 +105,7 @@ class LinkedList:
         self.next = None
 
 
-def gen_linked_list(nodes, head='1'):
+def gen_linked_list(nodes):
     vertices = {}
     for obj in nodes:
         vertices[obj['id']] = LinkedList(value=obj['value'])
@@ -106,4 +113,9 @@ def gen_linked_list(nodes, head='1'):
         vertex = vertices[obj['id']]
         if obj['next'] is not None:
             vertex.next = vertices[obj['next']]
+    return vertices
+
+
+def gen_linked_list_head(nodes, head='1', tail=''):
+    vertices = gen_linked_list(nodes)
     return vertices[head]
