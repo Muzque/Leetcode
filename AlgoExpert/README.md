@@ -5,6 +5,11 @@ There are two kind of entrypoint to run test.
 1. run.py _(depreciated)_
 2. go.py
 
+### Prerequisite
+```shell
+$ pip install -r requirements.txt
+```
+
 
 ### Usage:
 ```shell
