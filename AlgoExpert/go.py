@@ -1,18 +1,6 @@
 import os
-import time
 import importlib
 import argparse
-
-
-def timeit(method):
-    def timed(*args, **kw):
-        ts = time.time()
-        result = method(*args, **kw)
-        te = time.time()
-        print(f"> {(te - ts) * 1000} ms")
-        return result
-
-    return timed
 
 
 class Runner:
@@ -25,7 +13,6 @@ class Runner:
         mod = importlib.import_module(module_path)
         return getattr(mod, 'main')
 
-    @timeit
     def go(self):
         self.func()
 

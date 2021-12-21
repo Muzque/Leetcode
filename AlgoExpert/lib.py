@@ -1,5 +1,7 @@
+import time
 import logging
 import operator
+from memory_profiler import profile, memory_usage
 from typing import Optional, List, Dict
 """
 Example:
@@ -74,29 +76,49 @@ def check_result(mode: str, a, b):
         return tmp_a == tmp_b
 
 
-def display_test_result(index, case, result, mode: str):
+def display_test_result(case, result, mode: str):
     is_passed = check_result(mode, case['output'], result)
     result_string = 'Pass!' if is_passed else 'Fail!'
-    print(f'Question {index}:')
     print(f'Test result: {result_string}')
     if not is_passed:
         print(f'Input: {case["input"]}')
         print(f'Answer: {case["output"]}')
         print(f'Yours: {result}')
+    return is_passed
+
+
+def run_mem_profiling(function, inputs):
+    print('> profiling memory usage with the last test case...')
+    profile_func = profile(func=function)
+    profile_func(**inputs)
 
 
 def run_tests(testcases, function, mode='default'):
     print(f'Checker mode: {mode}')
+    results = []
+    time_costs = 0
     for idx, tc in enumerate(testcases, 1):
+        print(f'Question {idx}:')
         try:
-            ret = function(**tc['input'])
-            display_test_result(idx, tc, ret, mode)
+            ret, dt = timeit(function)(**tc['input'])
+            is_passed = display_test_result(tc, ret, mode)
+            print(f"Time Costs: {dt} ms")
+            time_costs += dt
         except Exception as e:
             ret = str(e)
-            display_test_result(idx, tc, ret, mode)
+            is_passed = display_test_result(tc, ret, mode)
             print('!!! Exception raised !!!')
             logging.error(e, exc_info=True)
+        results.append(is_passed)
         print('-' * 87)
+    is_all_passed = all(results)
+    print('Examine Report:')
+    print(f'> all pass: {is_all_passed}')
+    print(f'> failed index: {[i+1 for i, res in enumerate(results) if res is False]}')
+    print(f'> total time costs: {time_costs} ms')
+    print(f'> avg. time costs: {time_costs // len(results)} ms')
+    if is_all_passed:
+        run_mem_profiling(function, tc['input'])
 
 
 class LinkedList:
@@ -119,3 +141,13 @@ def gen_linked_list(nodes):
 def gen_linked_list_head(nodes, head='1', tail=''):
     vertices = gen_linked_list(nodes)
     return vertices[head]
+
+
+def timeit(method):
+    def timed(*args, **kw):
+        ts = time.time()
+        result = method(*args, **kw)
+        te = time.time()
+        dt = round((te - ts) * 1000, 2)
+        return result, dt
+    return timed
