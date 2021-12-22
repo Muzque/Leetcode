@@ -15,15 +15,32 @@ testcases = [
             [3, 2, 1],
         ],
     },
+    {
+        'input': {
+            'array': [],
+        },
+        'output': [],
+    },
 ]
 
 from lib import run_tests
 
 
-def getPermutations(array):
-    ret = []
+def dfs(array, tmp, result):
+    if len(array) == 0:
+        result.append(tmp)
+        return
+    for i in range(len(array)):
+        dfs(array[:i] + array[i+1:], tmp + [array[i]], result)
+    return
 
-    return ret
+
+def getPermutations(array):
+    if not array:
+        return []
+    result = []
+    dfs(array, [], result)
+    return result
 
 
 def main():
