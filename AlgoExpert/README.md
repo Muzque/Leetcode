@@ -19,13 +19,28 @@ An example to test `heightBalancedBinaryTree` under `binary_trees` category.
 ```shell
 $ python go.py -q binary_trees/heightBalancedBinaryTree.py
 
+Checker mode: default
 Question 1:
 Test result: Pass!
+Time Costs: 0.0 ms
 ---------------------------------------------------------------------------------------
 Question 2:
 Test result: Pass!
+Time Costs: 0.0 ms
 ---------------------------------------------------------------------------------------
-> 0.7116794586181641 ms
+Examine Report:
+> all pass: True
+> failed index: []
+> total time costs: 0.0 ms
+> avg. time costs: 0.0 ms
+> profiling memory usage with the last test case...
+Filename: D:\repo\Leetcode\AlgoExpert\binary_trees\heightBalancedBinaryTree.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    91     41.3 MiB     41.3 MiB           1   def heightBalancedBinaryTree(tree):
+    92     41.3 MiB      0.0 MiB           1       is_balanced, depth = find_depth(tree)
+    93     41.3 MiB      0.0 MiB           1       return is_balanced
 ```
 
 
