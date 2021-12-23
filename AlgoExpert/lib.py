@@ -79,46 +79,51 @@ def check_result(mode: str, a, b):
 def display_test_result(case, result, mode: str):
     is_passed = check_result(mode, case['output'], result)
     result_string = 'Pass!' if is_passed else 'Fail!'
-    print(f'Test result: {result_string}')
+    printc(f'Test result: {result_string}', 'ok2')
     if not is_passed:
-        print(f'Input: {case["input"]}')
-        print(f'Answer: {case["output"]}')
-        print(f'Yours: {result}')
+        printc(f'Input: {case["input"]}', 'warning')
+        printc(f'Answer: {case["output"]}', 'warning')
+        printc(f'Yours: {result}', 'warning')
     return is_passed
 
 
 def run_mem_profiling(function, inputs):
-    print('> profiling memory usage with the last test case...')
+    printc('> profiling memory usage with the last test case...')
     profile_func = profile(func=function)
     profile_func(**inputs)
 
 
+def summary(results, time_costs, function, tc_input):
+    is_all_passed = all(results)
+    level = 'ok' if is_all_passed else 'error'
+    printc('Examine Report:', 'header')
+    printc(f'> all pass: {is_all_passed}', level)
+    printc(f'> failed index: {[i + 1 for i, res in enumerate(results) if res is False]}', level)
+    printc(f'> total time costs: {time_costs} ms')
+    printc(f'> avg. time costs: {time_costs // len(results)} ms')
+    if is_all_passed:
+        run_mem_profiling(function, tc_input)
+
+
 def run_tests(testcases, function, mode='default'):
-    print(f'Checker mode: {mode}')
+    printc(f'Checker mode: {mode}', 'header')
     results = []
     time_costs = 0
     for idx, tc in enumerate(testcases, 1):
-        print(f'Question {idx}:')
+        printc(f'Question {idx}:', 'ok2')
         try:
             ret, dt = timeit(function)(**tc['input'])
             is_passed = display_test_result(tc, ret, mode)
-            print(f"Time Costs: {dt} ms")
+            printc(f"Time Costs: {dt} ms", 'ok2')
             time_costs += dt
         except Exception as e:
             ret = str(e)
             is_passed = display_test_result(tc, ret, mode)
-            print('!!! Exception raised !!!')
+            printc('!!! Exception raised !!!', 'error')
             logging.error(e, exc_info=True)
         results.append(is_passed)
         print('-' * 87)
-    is_all_passed = all(results)
-    print('Examine Report:')
-    print(f'> all pass: {is_all_passed}')
-    print(f'> failed index: {[i+1 for i, res in enumerate(results) if res is False]}')
-    print(f'> total time costs: {time_costs} ms')
-    print(f'> avg. time costs: {time_costs // len(results)} ms')
-    if is_all_passed:
-        run_mem_profiling(function, tc['input'])
+    summary(results, time_costs, function, tc['input'])
 
 
 class LinkedList:
@@ -148,6 +153,33 @@ def timeit(method):
         ts = time.time()
         result = method(*args, **kw)
         te = time.time()
-        dt = round((te - ts) * 1000, 2)
+        dt = round((te - ts) * 1000, 4)
         return result, dt
     return timed
+
+
+class Colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
+def printc(message, level='ok'):
+    cached = {
+        'header': Colors.HEADER,
+        'ok': Colors.OKBLUE,
+        'ok2': Colors.OKCYAN,
+        'warning': Colors.WARNING,
+        'error': Colors.FAIL
+    }
+    if level not in cached:
+        raise Exception(f'Not available message level: {level}')
+    start = cached[level]
+    end = Colors.ENDC
+    print(f'{start}{message}{end}')
