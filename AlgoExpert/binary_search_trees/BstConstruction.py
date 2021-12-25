@@ -41,13 +41,11 @@ class BST:
         return self.left.getMinValue()
 
     def remove(self, value, parent=None):
-        if value < self.value:
-            if self.left is not None:
-                self.left.remove(value, self)
-        elif value > self.value:
-            if self.right is not None:
-                self.right.remove(value, self)
-        else:
+        if value < self.value and self.left is not None:
+            self.left.remove(value, self)
+        elif value > self.value and self.right is not None:
+            self.right.remove(value, self)
+        elif value == self.value:
             if self.left is not None and self.right is not None:
                 self.value = self.right.getMinValue()
                 self.right.remove(self.value, self)
