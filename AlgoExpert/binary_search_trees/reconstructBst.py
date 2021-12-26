@@ -6,6 +6,7 @@ class BST:
         self.right = right
 
 
+"""
 def traversal(node, array):
     if not array:
         return
@@ -29,3 +30,18 @@ def reconstructBst(preOrderTraversalValues):
     root = BST(n)
     traversal(root, preOrderTraversalValues)
     return root
+"""
+
+
+def reconstructBst(preOrderTraversalValues):
+    if len(preOrderTraversalValues) == 0:
+        return
+    current = preOrderTraversalValues[0]
+    pt = len(preOrderTraversalValues)
+    for i in range(1, len(preOrderTraversalValues)):
+        if preOrderTraversalValues[i] >= current:
+            pt = i
+            break
+    left = reconstructBst(preOrderTraversalValues[1:pt])
+    right = reconstructBst(preOrderTraversalValues[pt:])
+    return BST(current, left, right)
