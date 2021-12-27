@@ -1,4 +1,3 @@
-import os
 import importlib
 import argparse
 from lib import timeit
@@ -10,7 +9,7 @@ class Runner:
         self.func = self.load()
 
     def load(self):
-        module_path = '.'.join(self.question.split(os.sep))
+        module_path = f'problems.{self.question}'
         mod = importlib.import_module(module_path)
         return getattr(mod, 'main')
 
