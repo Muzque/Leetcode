@@ -97,3 +97,9 @@ class Solution:
 
         result = [presum[i]+sufsum[i] for i in range(len(arr))]
         return result
+
+      
+if __name__ == '__main__':
+    tc = testcases[0]
+    kls = Solution()
+    ret = kls.getDistances(**tc['input'])
