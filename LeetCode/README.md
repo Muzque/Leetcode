@@ -1,6 +1,20 @@
 # Leetcode
 ## Usage
+```shell
+$ python go.py -h
+
+usage: go.py [-h] -q QUESTION
+
+Run test
+
+optional arguments:
+  -h, --help                          show this help message and exit
+  -q QUESTION, --question QUESTION    select question under problems directory
+
 ```
+
+## Usage (deprecated)
+```shell
 $ python examine.py -h
 
 usage: examine.py [-h] [-d DAILY] [-hi] [-a] [-c CASE] [-w WEEKLY]
@@ -17,9 +31,10 @@ optional arguments:
   -w WEEKLY, --weekly WEEKLY
                         select problem number of weekly contest
 ```
-* Difficulty: (E) Easy, (M) Medium, (H) Hard
 
-### Daily ###
+## Solved problems (deprecated)
+* Difficulty: (E) Easy, (M) Medium, (H) Hard
+### Daily
 |Date      |No.  |*   |Title                                                  |Runtime|Memory  |Runtime|Memory  |
 |:--------:|:---:|:--:|:-----------------------------------------------------:|:-----:|:------:|:-----:|:------:|
 |2021-04-26|1642 |M   |Furthest Building You Can Reach                        |5284 ms|28.8  MB|       |        |
@@ -60,7 +75,7 @@ optional arguments:
 |2021-05-31|1268 |M   |Search Suggestions System                              |604  ms|17.5  MB|       |        |
 |2021-11-15|368  |M   |Largest Divisible Subset                               |436  ms|14.6  MB|       |        |
 
-### Weekly Context ###
+### Weekly Context
 |Week |#    |No.  |*   |Title                                              |Runtime|Memory  |Runtime|Memory  |
 |:---:|:---:|:---:|:--:|:-------------------------------------------------:|:-----:|:------:|:-----:|:------:|
 |240  |1    |1854 |E   |Maximum Population Year                            |44   ms|14.3  MB|       |        |

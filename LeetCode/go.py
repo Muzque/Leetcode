@@ -29,7 +29,7 @@ if __name__ == "__main__":
         "-q",
         "--question",
         type=str,
-        help="select question",
+        help="select question under problems directory",
         dest="question",
         required=True,
     )
