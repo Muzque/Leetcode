@@ -30,8 +30,15 @@ testcases = [
 ]
 
 
+from lib import run_tests
+
+
 def main():
-    print()
+    kls = Solution()
+    run_tests(
+        testcases=testcases,
+        function=kls.getDistances,
+    )
 
 
 # TLE
@@ -53,7 +60,8 @@ class Solution0:
         return result
 
 
-class Solution:
+# 1520ms, PR25
+class Solution1:
 
     def getDistances(self, arr: List[int]) -> List[int]:
         result = [0] * len(arr)
@@ -71,6 +79,26 @@ class Solution:
         return result
 
 
+# 1316ms, PR100
+class Solution:
+
+    def getDistances(self, arr: List[int]) -> List[int]:
+        presum = [0] * len(arr)
+        sufsum = [0] * len(arr)
+        cached = defaultdict(list)
+        for i, num in enumerate(arr):
+            cached[num].append(i)
+
+        for n, subarr in cached.items():
+            for i in range(1, len(subarr)):
+                presum[subarr[i]] = presum[subarr[i-1]] + i * (subarr[i] - subarr[i-1])
+            for i in range(len(subarr)-2, -1, -1):
+                sufsum[subarr[i]] = sufsum[subarr[i+1]] + (len(subarr) - 1 - i) * (subarr[i+1] - subarr[i])
+
+        result = [presum[i]+sufsum[i] for i in range(len(arr))]
+        return result
+
+      
 if __name__ == '__main__':
     tc = testcases[0]
     kls = Solution()
