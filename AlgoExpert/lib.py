@@ -93,7 +93,7 @@ def run_mem_profiling(function, inputs):
     profile_func(**inputs)
 
 
-def summary(results, time_costs, function, tc_input):
+def _show_summary(results, time_costs):
     is_all_passed = all(results)
     level = 'ok' if is_all_passed else 'error'
     printc('Examine Report:', 'header')
@@ -101,6 +101,11 @@ def summary(results, time_costs, function, tc_input):
     printc(f'> failed index: {[i + 1 for i, res in enumerate(results) if res is False]}', level)
     printc(f'> total time costs: {time_costs} ms')
     printc(f'> avg. time costs: {time_costs // len(results)} ms')
+    return is_all_passed
+
+
+def summary(results, time_costs, function, tc_input):
+    is_all_passed = _show_summary(results, time_costs)
     if is_all_passed:
         run_mem_profiling(function, tc_input)
 
@@ -124,6 +129,30 @@ def run_tests(testcases, function, mode='default'):
         results.append(is_passed)
         print('-' * 87)
     summary(results, time_costs, function, tc['input'])
+
+
+def run_sequences(sequences, klass, mode='default'):
+    printc(f'Init class:', 'ok2')
+    results = []
+    first = sequences.pop(0)
+    kls = klass(first['arguments'])
+    time_costs = 0
+    for idx, tc in enumerate(sequences, 1):
+        printc(f'Question {idx}:', 'ok2')
+        try:
+            method = getattr(kls, tc['method'])
+            ret, dt = timeit(method)(*tc['arguments'])
+            tc['input'] = {'method': tc['method'], 'arguments': tc['arguments']}
+            is_passed = display_test_result(tc, ret, mode)
+            time_costs += dt
+        except Exception as e:
+            ret = str(e)
+            is_passed = display_test_result(tc, ret, mode)
+            printc('!!! Exception raised !!!', 'error')
+            logging.error(e, exc_info=True)
+        results.append(is_passed)
+        print('-' * 87)
+    _show_summary(results, time_costs)
 
 
 class LinkedList:
