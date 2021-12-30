@@ -5,7 +5,7 @@ import argparse
 
 class Runner:
     def __init__(self, question: str):
-        self.question = question.rstrip('.py')
+        self.question = question.split('.')[0]
         self.func = self.load()
 
     def load(self):
