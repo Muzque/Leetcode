@@ -27,7 +27,8 @@ class TreeNode:
         self.right = right
 
 
-class Solution:
+# 48ms 23.8% | 20.7MB 44.74%
+class Solution1:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
         def rec(node, biggest, smallest, diff):
             if node is None:
@@ -43,3 +44,32 @@ class Solution:
 
         diff = rec(root, root.val, root.val, float('-inf'))
         return diff
+
+
+# 44ms 39.3% | 15.2MB 92.42%
+class Solution2:
+    def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
+        queue = [(root, root.val, root.val)]
+        res = 0
+        while queue:
+            node, big, small = queue.pop(0)
+            big = max(node.val, big)
+            small = min(node.val, small)
+            res = max(res, abs(node.val - big), abs(node.val - small))
+            if node.left is not None:
+                queue.append((node.left, big, small))
+            if node.right is not None:
+                queue.append((node.right, big, small))
+        return res
+
+
+# 32ms 94.74% | 21MB 14.26%
+class Solution:
+    def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
+        def rec(node, maxm, minm):
+            if node is None:
+                return 0
+            maxm, minm = max(maxm, node.val), min(minm, node.val)
+            res = max(abs(node.val - maxm), abs(node.val - minm))
+            return max(res, rec(node.left, maxm, minm), rec(node.right, maxm, minm))
+        return rec(root, root.val, root.val)
